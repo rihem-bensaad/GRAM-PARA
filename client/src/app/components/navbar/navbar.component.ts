@@ -20,7 +20,6 @@ export class NavbarComponent implements OnInit {
       this.checkLog(this.cookiefinder(document.cookie))
     }
   }
-
     checkLog(cook:string){
       console.log('cook')
       this.authenticationservice.checkLog(cook).subscribe((res:any)=>{
