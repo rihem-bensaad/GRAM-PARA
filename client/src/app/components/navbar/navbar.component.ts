@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authenticationservice: authentication) { }
 
   ngOnInit(): void {
+    console.log('s')
     console.log(document.cookie)
     if(document.cookie.includes('GRAM')){
       
