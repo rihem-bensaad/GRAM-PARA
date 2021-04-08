@@ -16,14 +16,14 @@ export class NavbarComponent implements OnInit {
     console.log("**********",this.router.snapshot.params)
     console.log(document.cookie)
     if(document.cookie.includes('GRAM')){
-      
       this.checkLog(this.cookiefinder(document.cookie))
     }
   }
     checkLog(cook:string){
       console.log('cook')
       this.authenticationservice.checkLog(cook).subscribe((res:any)=>{
-        if(res.message == 'success'){
+        console.log(res)
+        if(res.role == 'client'){
           this.logged = true
         }
       })
@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
       document.location.href="/";
     }
     cookiefinder(str:string): string{
-      var strx = str.split(', ');
+      var strx = str.split('; ');
       var found = ''
       for (var i = 0; i < strx.length; i++) {
           if(strx[i].includes('GRAM')){
