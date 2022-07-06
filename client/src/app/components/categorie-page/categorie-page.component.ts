@@ -37,5 +37,4 @@ export class CategoriePageComponent implements OnInit {
       this.pages = Array(Math.round(this.products.length/8)-1)
     })
   }
-
 }
