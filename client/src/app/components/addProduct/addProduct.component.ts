@@ -16,9 +16,6 @@ export class addProductComponent implements OnInit {
   imageUrl: string = ''
   description: string = ''
   
-  constructor(private prodservice: ProductService) { }
-
-  ngOnInit(): void {}
   changeData(event: Event): void {
     const { target } = event
 
